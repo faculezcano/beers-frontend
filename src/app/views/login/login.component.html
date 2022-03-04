@@ -1,9 +1,11 @@
 <mat-form-field>
-  <input #email matInput placeholder="Email" type="email">
+  <input #email matInput placeholder="Email" type="email" />
 </mat-form-field>
 
 <mat-form-field>
-  <input #password matInput placeholder="Password" type="password">
+  <input #password matInput placeholder="Password" type="password" />
 </mat-form-field>
 
-<button mat-button (click)="loginClick(email.value, password.value)">Login</button>
+<button mat-button (click)="loginClick(email.value, password.value)">
+  Login
+</button>
