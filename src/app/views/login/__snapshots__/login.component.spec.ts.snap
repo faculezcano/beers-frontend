@@ -119,7 +119,7 @@ exports[`LoginComponent should match snapshot 1`] = `
     <span
       class="mat-button-wrapper"
     >
-      Login
+       Login
     </span>
     <span
       class="mat-ripple mat-button-ripple"
