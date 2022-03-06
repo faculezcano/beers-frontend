@@ -1,11 +1,48 @@
-<mat-form-field>
-  <input #email matInput placeholder="Email" type="email" />
-</mat-form-field>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <h1 class="text-muted">Login</h1>
 
-<mat-form-field>
-  <input #password matInput placeholder="Password" type="password" />
-</mat-form-field>
+      <div class="card">
+        <div class="card-body">
+          <div class="mb-3">
+            <label class="form-label" for="email">Email</label>
+            <input
+              #email
+              class="form-control"
+              placeholder="you@example.com"
+              type="email"
+            />
+          </div>
 
-<button mat-button (click)="loginClick(email.value, password.value)">
-  Login
-</button>
+          <div class="mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input
+              #password
+              [class]="'form-control' + (error ? ' is-invalid' : '')"
+              placeholder="banana"
+              type="password"
+            />
+            <div class="invalid-feedback">Invalid email or password</div>
+          </div>
+
+          <div class="text-end">
+            <button
+              class="btn btn-primary"
+              (click)="loginClick(email.value, password.value)"
+              [disabled]="loading"
+            >
+              <span
+                *ngIf="loading"
+                class="spinner-border spinner-border-sm"
+                role="status"
+                aria-hidden="true"
+              ></span>
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
