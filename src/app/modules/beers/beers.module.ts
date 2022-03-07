@@ -5,9 +5,24 @@ import { BeersRoutingModule } from './beers-routing.module';
 import { ShowComponent } from './show/show.component';
 import { IndexComponent } from './index/index.component';
 import { IngredientsComponent } from './show/ingredients/ingredients.component';
+import { ListItemComponent } from './index/list-item/list-item.component';
+import { NgxTypeaheadModule } from 'ngx-typeahead';
+import { AutocompleteComponent } from './index/autocomplete/autocomplete.component';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
 @NgModule({
-  declarations: [ShowComponent, IndexComponent, IngredientsComponent],
-  imports: [CommonModule, BeersRoutingModule],
+  declarations: [
+    ShowComponent,
+    IndexComponent,
+    IngredientsComponent,
+    ListItemComponent,
+    AutocompleteComponent,
+  ],
+  imports: [
+    CommonModule,
+    BeersRoutingModule,
+    NgxTypeaheadModule,
+    AutocompleteLibModule,
+  ],
 })
 export class BeersModule {}

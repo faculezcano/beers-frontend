@@ -21,4 +21,8 @@ describe('IngredientsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should match snapshot', () => {
+    expect(fixture).toMatchSnapshot();
+  });
 });

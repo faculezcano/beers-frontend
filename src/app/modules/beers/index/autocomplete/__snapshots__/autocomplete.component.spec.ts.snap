@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AutocompleteComponent should match snapshot 1`] = `
+<app-autocomplete
+  __ngContext__={[Function LRootView]}
+  beersService={[Function BeersService]}
+  list={[Function Array]}
+  selected={[Function EventEmitter_]}
+  url=""
+  value=""
+>
+  <ng-autocomplete
+    class="ng-autocomplete"
+    searchkeyword="value"
+  >
+    <div
+      aria-expanded="false"
+      aria-owns="suggestions suggestions-history"
+      class="autocomplete-container"
+    >
+      <div
+        class="input-container"
+      >
+        <input
+          aria-autocomplete="list"
+          aria-label=""
+          autocomplete="off"
+          class="ng-untouched ng-pristine ng-valid"
+          placeholder=""
+          role="combobox"
+          type="text"
+        />
+      </div>
+      <div
+        class="suggestions-container is-hidden"
+        id="suggestions"
+        role="listbox"
+      >
+        <ul>
+        </ul>
+      </div>
+      <div
+        class="suggestions-container is-visible"
+        id="suggestions-history"
+        role="listbox"
+      >
+        <ul>
+        </ul>
+      </div>
+    </div>
+  </ng-autocomplete>
+</app-autocomplete>
+`;

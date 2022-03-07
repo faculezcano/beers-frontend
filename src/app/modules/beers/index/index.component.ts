@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BeersService } from '../../../services/beers.service';
 import { Beer } from '../../../models/beer';
+import * as moment from 'moment';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-beers',
@@ -8,12 +10,11 @@ import { Beer } from '../../../models/beer';
   styleUrls: ['./index.component.scss'],
 })
 export class IndexComponent implements OnInit {
+  public typeAheadURL = `${environment.apiUrl}/beers/search`;
   public beers: Beer[] = [];
   public top10Beers: Beer[] = [];
   public loading = false;
   private searchTimer: number | undefined = undefined;
-
-  public srmToColor = Beer.getColor;
 
   constructor(public beersService: BeersService) {}
 
@@ -26,8 +27,14 @@ export class IndexComponent implements OnInit {
 
     this.beersService.getBeers(params).subscribe((beers: Beer[]) => {
       this.beers = beers;
-      this.top10Beers = beers.sort((a, b) => 1 - 1).splice(0, 10);
       this.loading = false;
+    });
+  }
+
+  loadTopBeers(params: any = {}) {
+    params.order = 'first_brewed';
+    this.beersService.getBeers(params).subscribe((beers: Beer[]) => {
+      this.top10Beers = beers;
     });
   }
 
@@ -44,9 +51,25 @@ export class IndexComponent implements OnInit {
     }, 500);
   }
 
-  search(term: string) {
-    this.loadBeers({
-      q: term,
-    });
+  search(query: any) {
+    let params: any = {};
+
+    if (query.type == 'beer') {
+      params['filter[name]'] = query.value;
+    }
+
+    if (query.type == 'hops') {
+      params['filter[ingredients.hops.name]'] = query.value;
+    }
+
+    if (query.type == 'malt') {
+      params['filter[ingredients.malt.name]'] = query.value;
+    }
+
+    if (query.type == 'yeast') {
+      params['filter[ingredients.yeast]'] = query.value;
+    }
+
+    this.loadTopBeers(params);
   }
 }

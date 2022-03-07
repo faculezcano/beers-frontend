@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import * as tinycolor from 'tinycolor2';
 
 @Injectable({
   providedIn: 'root',
@@ -21,5 +20,9 @@ export class BeersService {
 
   getBeer(id: number) {
     return this.http.get(`${this.serviceUrl}/${id}`);
+  }
+
+  search(term: string) {
+    return this.http.get(`${this.serviceUrl}/search?q=${term}`);
   }
 }

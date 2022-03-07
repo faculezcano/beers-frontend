@@ -4,130 +4,80 @@ exports[`LoginComponent should match snapshot 1`] = `
 <app-login
   __ngContext__={[Function LRootView]}
   authService={[Function AuthService]}
+  error="false"
   loading="false"
+  router={[Function Router]}
 >
-  <mat-form-field
-    class="mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-has-label mat-form-field-hide-placeholder"
+  <div
+    class="container"
   >
     <div
-      class="mat-form-field-wrapper"
+      class="row"
     >
       <div
-        class="mat-form-field-flex"
+        class="col-md-4 mx-auto"
       >
-        <div
-          class="mat-form-field-infix"
+        <h1
+          class="text-muted"
         >
-          <input
-            aria-invalid="false"
-            aria-required="false"
-            class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored"
-            data-placeholder="Email"
-            matinput=""
-            type="email"
-          />
-          <span
-            class="mat-form-field-label-wrapper"
-          >
-            <label
-              class="mat-form-field-label mat-empty mat-form-field-empty"
-            >
-              <span>
-                Email
-              </span>
-            </label>
-          </span>
-        </div>
-      </div>
-      <div
-        class="mat-form-field-underline"
-      >
-        <span
-          class="mat-form-field-ripple"
-        />
-      </div>
-      <div
-        class="mat-form-field-subscript-wrapper"
-      >
+          Login
+        </h1>
         <div
-          class="mat-form-field-hint-wrapper ng-trigger ng-trigger-transitionMessages"
-          style="opacity:1;transform:translateY(0%);0:opacity;1:transform;"
+          class="card"
         >
           <div
-            class="mat-form-field-hint-spacer"
-          />
+            class="card-body"
+          >
+            <form>
+              <div
+                class="mb-3"
+              >
+                <label
+                  class="form-label"
+                  for="email"
+                >
+                  Email
+                </label>
+                <input
+                  class="form-control"
+                  placeholder="admin@example.com"
+                  type="email"
+                />
+              </div>
+              <div
+                class="mb-3"
+              >
+                <label
+                  class="form-label"
+                  for="password"
+                >
+                  Password
+                </label>
+                <input
+                  class="form-control"
+                  placeholder="admin"
+                  type="password"
+                />
+                <div
+                  class="invalid-feedback"
+                >
+                  Invalid email or password
+                </div>
+              </div>
+              <div
+                class="text-end"
+              >
+                <button
+                  class="btn btn-primary"
+                >
+                   Login 
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </mat-form-field><mat-form-field
-    class="mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-has-label mat-form-field-hide-placeholder"
-  >
-    <div
-      class="mat-form-field-wrapper"
-    >
-      <div
-        class="mat-form-field-flex"
-      >
-        <div
-          class="mat-form-field-infix"
-        >
-          <input
-            aria-invalid="false"
-            aria-required="false"
-            class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored"
-            data-placeholder="Password"
-            matinput=""
-            type="password"
-          />
-          <span
-            class="mat-form-field-label-wrapper"
-          >
-            <label
-              class="mat-form-field-label mat-empty mat-form-field-empty"
-            >
-              <span>
-                Password
-              </span>
-            </label>
-          </span>
-        </div>
-      </div>
-      <div
-        class="mat-form-field-underline"
-      >
-        <span
-          class="mat-form-field-ripple"
-        />
-      </div>
-      <div
-        class="mat-form-field-subscript-wrapper"
-      >
-        <div
-          class="mat-form-field-hint-wrapper ng-trigger ng-trigger-transitionMessages"
-          style="opacity:1;transform:translateY(0%);0:opacity;1:transform;"
-        >
-          <div
-            class="mat-form-field-hint-spacer"
-          />
-        </div>
-      </div>
-    </div>
-  </mat-form-field><button
-    class="mat-focus-indicator mat-button mat-button-base"
-    mat-button=""
-  >
-    <span
-      class="mat-button-wrapper"
-    >
-       Login
-    </span>
-    <span
-      class="mat-ripple mat-button-ripple"
-      matripple=""
-    />
-    <span
-      class="mat-button-focus-overlay"
-    />
-  </button>
+  </div>
 </app-login>
 `;

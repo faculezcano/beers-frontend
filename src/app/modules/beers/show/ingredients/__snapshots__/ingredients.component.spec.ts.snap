@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IngredientsComponent should match snapshot 1`] = `
+<app-ingredients
+  __ngContext__={[Function LRootView]}
+  ingredients={[Function Array]}
+>
+  <h3>
+    Ingredients
+  </h3><ul
+    class="text-capitalize"
+  >
+  </ul>
+</app-ingredients>
+`;

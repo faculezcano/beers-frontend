@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShowComponent should match snapshot 1`] = `
+<app-show
+  __ngContext__={[Function LRootView]}
+  beersService={[Function BeersService]}
+  id="undefined"
+  router={[Function ActivatedRoute]}
+  srmToColor={[Function Function]}
+>
+</app-show>
+`;

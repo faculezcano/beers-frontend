@@ -1,0 +1,17 @@
+<ng-autocomplete
+  [data]="list"
+  searchKeyword="value"
+  (inputChanged)="input($event)"
+  (selected)="handleSelected($event)"
+  [itemTemplate]="itemTemp"
+>
+</ng-autocomplete>
+
+<ng-template #itemTemp let-result>
+  <div class="row gx-0 text-start">
+    <div class="col p-2" [innerHTML]="result.value"></div>
+    <div class="col-auto p-2 text-muted small d-flex align-items-end">
+      {{ result.type }}
+    </div>
+  </div>
+</ng-template>

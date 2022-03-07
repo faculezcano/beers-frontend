@@ -1,22 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShowComponent } from './show.component';
-import { RouterTestingModule } from '@angular/router/testing';
+import { AutocompleteComponent } from './autocomplete.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
-describe('ShowComponent', () => {
-  let component: ShowComponent;
-  let fixture: ComponentFixture<ShowComponent>;
+describe('AutocompleteComponent', () => {
+  let component: AutocompleteComponent;
+  let fixture: ComponentFixture<AutocompleteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ShowComponent],
-      imports: [HttpClientTestingModule, RouterTestingModule],
+      declarations: [AutocompleteComponent],
+      imports: [HttpClientTestingModule, AutocompleteLibModule],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShowComponent);
+    fixture = TestBed.createComponent(AutocompleteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

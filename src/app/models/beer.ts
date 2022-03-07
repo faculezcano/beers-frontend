@@ -10,6 +10,7 @@ export class Beer {
   ibu: number | undefined;
   srm: number | undefined;
   ingredients: Object[] = [];
+  first_brewed: string | undefined;
 
   // this function transforms srm value to color
   static getColor(srm: number = 0): Instance {

@@ -1,57 +1,39 @@
 <div class="container">
   <div class="row my-3">
-    <div class="col">
-      <h1>Beers</h1>
-    </div>
-    <div class="col-sm-auto d-flex align-items-center justify-content-end">
-      <div class="position-relative">
-        <input
-          type="text"
-          class="form-control rounded-pill"
-          (input)="searchInput($event)"
-        />
-        <div
-          class="position-absolute h-100 end-0 top-0 d-flex align-items-center px-1"
-        >
-          <i class="bi-search mx-2 text-muted"></i>
-        </div>
-      </div>
-    </div>
+    <div class="col"></div>
   </div>
 
   <div *ngIf="!loading" class="position-relative">
-    <div *ngFor="let beer of beers" class="card mb-2">
-      <div
-        class="card-body"
-        [style]="{
-          borderLeft: '3px solid ' + srmToColor(beer.srm).toHexString()
-        }"
-      >
-        <div class="row">
-          <div class="col-auto">
-            {{ beer.name }} • <span class="text-muted">{{ beer.tagline }}</span>
+    <div class="row">
+      <div class="col-md-8 my-3 order-1 order-sm-0">
+        <h1>Beers</h1>
+
+        <app-list-item *ngFor="let beer of beers" [beer]="beer"></app-list-item>
+      </div>
+      <div class="col-md-4 order-0 order-sm-1">
+        <div class="row my-3">
+          <div class="col">
+            <h3>Top 10</h3>
           </div>
-
-          <div class="col text-end">
-            <span
-              class="badge rounded-pill me-2"
-              [style]="{
-                backgroundColor: srmToColor(beer.srm).toHexString()
-              }"
-              >SRM: {{ beer.srm || "?" }}</span
-            >
-
-            <span class="badge bg-secondary rounded-pill me-2"
-              >IBU: {{ beer.ibu || "?" }}</span
-            >
-
-            <span class="badge bg-secondary rounded-pill"
-              >ABV: {{ beer.abv || "?" }}%</span
-            >
+          <div
+            class="col-sm-auto d-flex align-items-center justify-content-end"
+          >
+            <div class="position-relative">
+              <app-autocomplete (selected)="search($event)"></app-autocomplete>
+              <div
+                class="position-absolute h-100 end-0 top-0 d-flex align-items-center px-1"
+              >
+                <i class="bi-search mx-2 text-muted"></i>
+              </div>
+            </div>
           </div>
         </div>
+
+        <app-list-item
+          *ngFor="let beer of top10Beers"
+          [beer]="beer"
+        ></app-list-item>
       </div>
-      <a [routerLink]="'/beers/' + beer._id" class="stretched-link"></a>
     </div>
   </div>
 

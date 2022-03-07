@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BeersComponent should match snapshot 1`] = `
+<app-beers
+  __ngContext__={[Function LRootView]}
+  beers={[Function Array]}
+  beersService={[Function BeersService]}
+  loading={[Function Boolean]}
+  searchTimer="undefined"
+  top10Beers={[Function Array]}
+  typeAheadURL={[Function String]}
+>
+  <div
+    class="container"
+  >
+    <div
+      class="row my-3"
+    >
+      <div
+        class="col"
+      />
+    </div>
+    <div
+      class="text-center"
+    >
+      <span
+        aria-hidden="true"
+        class="spinner-border text-muted"
+        role="status"
+      />
+    </div>
+  </div>
+</app-beers>
+`;

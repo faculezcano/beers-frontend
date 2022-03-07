@@ -1,0 +1,33 @@
+<div *ngIf="beer" class="card mb-2">
+  <div
+    class="card-body"
+    [style]="{
+      borderLeft: '3px solid ' + srmToColor(beer.srm).toHexString()
+    }"
+  >
+    <div class="row">
+      <div class="col-auto">
+        {{ beer.name }} • <span class="text-muted">{{ beer.tagline }}</span>
+      </div>
+
+      <div class="col text-end">
+        <span
+          class="badge rounded-pill me-2"
+          [style]="{
+            backgroundColor: srmToColor(beer.srm).toHexString()
+          }"
+          >SRM: {{ beer.srm || "?" }}</span
+        >
+
+        <span class="badge bg-secondary rounded-pill me-2"
+          >IBU: {{ beer.ibu || "?" }}</span
+        >
+
+        <span class="badge bg-secondary rounded-pill"
+          >ABV: {{ beer.abv || "?" }}%</span
+        >
+      </div>
+    </div>
+  </div>
+  <a [routerLink]="'/beers/' + beer._id" class="stretched-link"></a>
+</div>
