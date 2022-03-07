@@ -1,11 +1,21 @@
-<ng-autocomplete
-  [data]="list"
-  searchKeyword="value"
-  (inputChanged)="input($event)"
-  (selected)="handleSelected($event)"
-  [itemTemplate]="itemTemp"
->
-</ng-autocomplete>
+<div class="position-relative">
+  <ng-autocomplete
+    [data]="list"
+    searchKeyword="value"
+    (inputChanged)="input($event)"
+    (selected)="handleSelected($event)"
+    [itemTemplate]="itemTemp"
+    (inputCleared)="cleared.emit()"
+  >
+  </ng-autocomplete>
+
+  <div
+    *ngIf="inputValue.length == 0"
+    class="position-absolute h-100 end-0 top-0 d-flex align-items-center px-1"
+  >
+    <i class="bi-search mx-2 text-muted"></i>
+  </div>
+</div>
 
 <ng-template #itemTemp let-result>
   <div class="row gx-0 text-start">

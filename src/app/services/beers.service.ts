@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ export class BeersService {
     this.serviceUrl = `${environment.apiUrl}/beers`;
   }
 
-  getBeers(params: any = {}): any {
+  getBeers(params: any = {}): Observable<Object> {
     return this.http.get(this.serviceUrl, {
       params: params,
     });

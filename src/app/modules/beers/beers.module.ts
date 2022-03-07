@@ -10,6 +10,7 @@ import { NgxTypeaheadModule } from 'ngx-typeahead';
 import { AutocompleteComponent } from './index/autocomplete/autocomplete.component';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { TopIngredientsComponent } from './index/top-ingredients/top-ingredients.component';
+import { BeersListComponent } from './index/beers-list/beers-list.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TopIngredientsComponent } from './index/top-ingredients/top-ingredients
     ListItemComponent,
     AutocompleteComponent,
     TopIngredientsComponent,
+    BeersListComponent,
   ],
   imports: [
     CommonModule,

@@ -9,9 +9,11 @@ import { BeersService } from '../../../../services/beers.service';
 export class AutocompleteComponent implements OnInit {
   @Input() url: string = '';
   @Output() selected = new EventEmitter<any>();
+  @Output() cleared = new EventEmitter<any>();
 
   public list: any[] = [];
   public value: string = '';
+  public inputValue: string = '';
 
   private searchTimer: number | undefined;
 
@@ -21,6 +23,7 @@ export class AutocompleteComponent implements OnInit {
 
   input(term: string) {
     this.list = [];
+    this.inputValue = term;
 
     if (this.searchTimer) {
       clearTimeout(this.searchTimer);

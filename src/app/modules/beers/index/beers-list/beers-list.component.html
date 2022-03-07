@@ -1,0 +1,11 @@
+<div *ngIf="!loading">
+  <app-list-item *ngFor="let beer of beers" [beer]="beer"></app-list-item>
+</div>
+
+<div *ngIf="loading" class="text-center">
+  <span
+    class="spinner-border text-muted"
+    role="status"
+    aria-hidden="true"
+  ></span>
+</div>
