@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopIngredientsComponent should match snapshot 1`] = `
+<app-top-ingredients
+  __ngContext__={[Function LRootView]}
+  beersService={[Function BeersService]}
+  ingredients={[Function Array]}
+>
+</app-top-ingredients>
+`;

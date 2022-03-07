@@ -1,0 +1,13 @@
+<div *ngFor="let ingredient of ingredients; let i = index" class="card mb-2">
+  <div class="card-body">
+    <div class="row gx-0">
+      <div class="col-auto h2">
+        {{ i + 1 }}
+      </div>
+      <div class="col text-end">
+        {{ ingredient.name }}
+        <div class="small text-muted">Used: {{ ingredient.count }}</div>
+      </div>
+    </div>
+  </div>
+</div>

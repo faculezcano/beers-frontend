@@ -25,4 +25,8 @@ export class BeersService {
   search(term: string) {
     return this.http.get(`${this.serviceUrl}/search?q=${term}`);
   }
+
+  getTopUsedIngredients() {
+    return this.http.get(`${this.serviceUrl}/topUsedIngredients`);
+  }
 }

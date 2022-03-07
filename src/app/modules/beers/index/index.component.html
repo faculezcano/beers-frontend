@@ -5,7 +5,12 @@
 
   <div *ngIf="!loading" class="position-relative">
     <div class="row">
-      <div class="col-md-8 my-3 order-1 order-sm-0">
+      <div class="col-md-2 my-3">
+        <h2>Top ingredients</h2>
+
+        <app-top-ingredients></app-top-ingredients>
+      </div>
+      <div class="col-md-6 my-3 order-1 order-sm-0">
         <h1>Beers</h1>
 
         <app-list-item *ngFor="let beer of beers" [beer]="beer"></app-list-item>
