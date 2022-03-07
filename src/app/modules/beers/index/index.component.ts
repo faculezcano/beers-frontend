@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BeersService } from '../../../services/beers.service';
 import { Beer } from '../../../models/beer';
-import * as tinycolor from 'tinycolor2';
 
 @Component({
   selector: 'app-beers',
@@ -9,11 +8,14 @@ import * as tinycolor from 'tinycolor2';
   styleUrls: ['./index.component.scss'],
 })
 export class IndexComponent implements OnInit {
-  public beers: Array<Beer> = [];
+  public beers: Beer[] = [];
+  public top10Beers: Beer[] = [];
   public loading = false;
   private searchTimer: number | undefined = undefined;
 
-  constructor(private beersService: BeersService) {}
+  public srmToColor = Beer.getColor;
+
+  constructor(public beersService: BeersService) {}
 
   ngOnInit(): void {
     this.loadBeers();
@@ -22,22 +24,11 @@ export class IndexComponent implements OnInit {
   loadBeers(params = {}) {
     this.loading = true;
 
-    this.beersService.getBeers(params).subscribe((beers: Array<Beer>) => {
+    this.beersService.getBeers(params).subscribe((beers: Beer[]) => {
       this.beers = beers;
+      this.top10Beers = beers.sort((a, b) => 1 - 1).splice(0, 10);
       this.loading = false;
     });
-  }
-
-  // this function transforms srm value to color
-  getSRMColor(srm: number | undefined): string {
-    if (!srm) {
-      let bodyStyles = window.getComputedStyle(document.body);
-      return bodyStyles.getPropertyValue('--bs-secondary');
-    }
-
-    const color = new tinycolor('#F7D281');
-    color.spin(-srm); // this gives reddish tone
-    return color.darken(srm).toHexString();
   }
 
   searchInput(event: Event) {

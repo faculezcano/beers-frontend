@@ -1,0 +1,13 @@
+<h3>Ingredients</h3>
+<ul class="text-capitalize">
+  <li *ngFor="let item of ingredients | keyvalue">
+    {{ item.key }}
+    <ul *ngIf="item.value.push">
+      <li *ngFor="let ingredient of item.value">
+        {{ ingredient.name }}: {{ ingredient.amount.value }}
+        {{ ingredient.amount.unit }}
+      </li>
+    </ul>
+    <span *ngIf="!item.value.push"> : {{ item.value }} </span>
+  </li>
+</ul>

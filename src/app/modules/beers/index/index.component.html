@@ -23,7 +23,9 @@
     <div *ngFor="let beer of beers" class="card mb-2">
       <div
         class="card-body"
-        [style]="{ borderLeft: '3px solid ' + getSRMColor(beer.srm) }"
+        [style]="{
+          borderLeft: '3px solid ' + srmToColor(beer.srm).toHexString()
+        }"
       >
         <div class="row">
           <div class="col-auto">
@@ -34,7 +36,7 @@
             <span
               class="badge rounded-pill me-2"
               [style]="{
-                backgroundColor: getSRMColor(beer.srm)
+                backgroundColor: srmToColor(beer.srm).toHexString()
               }"
               >SRM: {{ beer.srm || "?" }}</span
             >
