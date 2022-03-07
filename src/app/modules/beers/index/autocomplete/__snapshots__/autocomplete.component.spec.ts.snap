@@ -4,50 +4,63 @@ exports[`AutocompleteComponent should match snapshot 1`] = `
 <app-autocomplete
   __ngContext__={[Function LRootView]}
   beersService={[Function BeersService]}
+  cleared={[Function EventEmitter_]}
+  inputValue=""
   list={[Function Array]}
   selected={[Function EventEmitter_]}
   url=""
   value=""
 >
-  <ng-autocomplete
-    class="ng-autocomplete"
-    searchkeyword="value"
+  <div
+    class="position-relative"
   >
-    <div
-      aria-expanded="false"
-      aria-owns="suggestions suggestions-history"
-      class="autocomplete-container"
+    <ng-autocomplete
+      class="ng-autocomplete"
+      searchkeyword="value"
     >
       <div
-        class="input-container"
+        aria-expanded="false"
+        aria-owns="suggestions suggestions-history"
+        class="autocomplete-container"
       >
-        <input
-          aria-autocomplete="list"
-          aria-label=""
-          autocomplete="off"
-          class="ng-untouched ng-pristine ng-valid"
-          placeholder=""
-          role="combobox"
-          type="text"
-        />
+        <div
+          class="input-container"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-label=""
+            autocomplete="off"
+            class="ng-untouched ng-pristine ng-valid"
+            placeholder=""
+            role="combobox"
+            type="text"
+          />
+        </div>
+        <div
+          class="suggestions-container is-hidden"
+          id="suggestions"
+          role="listbox"
+        >
+          <ul>
+          </ul>
+        </div>
+        <div
+          class="suggestions-container is-visible"
+          id="suggestions-history"
+          role="listbox"
+        >
+          <ul>
+          </ul>
+        </div>
       </div>
-      <div
-        class="suggestions-container is-hidden"
-        id="suggestions"
-        role="listbox"
-      >
-        <ul>
-        </ul>
-      </div>
-      <div
-        class="suggestions-container is-visible"
-        id="suggestions-history"
-        role="listbox"
-      >
-        <ul>
-        </ul>
-      </div>
+    </ng-autocomplete>
+    <div
+      class="position-absolute h-100 end-0 top-0 d-flex align-items-center px-1"
+    >
+      <i
+        class="bi-search mx-2 text-muted"
+      />
     </div>
-  </ng-autocomplete>
+  </div>
 </app-autocomplete>
 `;

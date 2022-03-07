@@ -3,15 +3,11 @@
 exports[`BeersComponent should match snapshot 1`] = `
 <app-beers
   __ngContext__={[Function LRootView]}
-  beers={[Function Array]}
   beersService={[Function BeersService]}
-  loading={[Function Boolean]}
-  searchTimer="undefined"
-  top10Beers={[Function Array]}
-  typeAheadURL={[Function String]}
+  topBeersParams={[Function Object]}
 >
   <div
-    class="container"
+    class="container-fluid"
   >
     <div
       class="row my-3"
@@ -21,13 +17,113 @@ exports[`BeersComponent should match snapshot 1`] = `
       />
     </div>
     <div
-      class="text-center"
+      class="row"
     >
-      <span
-        aria-hidden="true"
-        class="spinner-border text-muted"
-        role="status"
-      />
+      <div
+        class="col-lg-3 col-md-6"
+      >
+        <h3
+          class="text-truncate my-3"
+        >
+          Top ingredients
+        </h3>
+        <app-top-ingredients>
+        </app-top-ingredients>
+      </div>
+      <div
+        class="col-lg-6 my-3 order-1 order-lg-0"
+      >
+        <h1>
+          Beers
+        </h1>
+        <app-beers-list>
+          <div
+            class="text-center"
+          >
+            <span
+              aria-hidden="true"
+              class="spinner-border text-muted"
+              role="status"
+            />
+          </div>
+        </app-beers-list>
+      </div>
+      <div
+        class="col-lg-3 col-md-6 order-0 order-lg-1"
+      >
+        <div
+          class="row my-3"
+        >
+          <div
+            class="col"
+          >
+            <h3>
+              Top 10 Beers
+            </h3>
+          </div>
+          <div
+            class="col-sm-auto d-flex align-items-center justify-content-end"
+          >
+            <app-autocomplete>
+              <div
+                class="position-relative"
+              >
+                <ng-autocomplete
+                  class="ng-autocomplete"
+                  searchkeyword="value"
+                >
+                  <div
+                    aria-expanded="false"
+                    aria-owns="suggestions suggestions-history"
+                    class="autocomplete-container"
+                  >
+                    <div
+                      class="input-container"
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-label=""
+                        autocomplete="off"
+                        class="ng-untouched ng-pristine ng-valid"
+                        placeholder=""
+                        role="combobox"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="suggestions-container is-hidden"
+                      id="suggestions"
+                      role="listbox"
+                    >
+                      <ul>
+                      </ul>
+                    </div>
+                    <div
+                      class="suggestions-container is-visible"
+                      id="suggestions-history"
+                      role="listbox"
+                    >
+                      <ul>
+                      </ul>
+                    </div>
+                  </div>
+                </ng-autocomplete>
+                <div
+                  class="position-absolute h-100 end-0 top-0 d-flex align-items-center px-1"
+                >
+                  <i
+                    class="bi-search mx-2 text-muted"
+                  />
+                </div>
+              </div>
+            </app-autocomplete>
+          </div>
+        </div>
+        <app-beers-list>
+          <div>
+          </div>
+        </app-beers-list>
+      </div>
     </div>
   </div>
 </app-beers>
