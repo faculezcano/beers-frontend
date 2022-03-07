@@ -1,4 +1,4 @@
 export class User {
-  id?: number;
-  email?: string;
+  id: number | undefined;
+  email: string | undefined;
 }

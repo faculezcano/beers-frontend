@@ -5,7 +5,12 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () =>
-      import('./views/login/login.module').then((m) => m.LoginModule),
+      import('./modules/login/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path: 'beers',
+    loadChildren: () =>
+      import('./modules/beers/beers.module').then((m) => m.BeersModule),
   },
 ];
 
